@@ -172,7 +172,7 @@ int compare_string(void const* a, void const* b) {
     char* strB = (char*) arrB;
 
     int ret = strcmp(strA, strB);
-    printf("compare_string: *A = %s, *B = %s, ret = %d\n", arrA, arrB, ret);
+    printf("compare_string: *A = %s, *B = %s, ret = %d\n", strA, strB, ret);
     return ret;
 }
 
