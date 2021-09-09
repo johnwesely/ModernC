@@ -1,3 +1,5 @@
+// implementation of a dynamic sized circular buffer data structure
+// exercises 2 and 3 from Modern C, Part 2, Chapter 13
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
