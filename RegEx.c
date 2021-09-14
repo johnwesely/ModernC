@@ -1,3 +1,24 @@
+/* Regular Expression Search and Replace
+** Challenge Problem 12 from Modern C
+** RegExp syntax:
+**     [...]:
+**         matches all characters and ranges within bracket
+**         ranges in format x-y
+**         '^' at beginning of pattern matches all characters except pattern 
+**         ex: [ab0-9A-Z]: characters a, b, all numbers, all uppercase characters
+**     ?:
+**         matches zero of one of the next character 
+**         ex: 'cool?.guy' matches both 'coolguy' and 'cool.guy'
+**     *:
+**         matches any number of characters before next character or pattern 
+**         in regular expression 
+**         matches greedily 
+**         ex: 'ap*e' matches 'apple pie' 
+**     \: 
+**         escape character
+**         disregards following '[', '?', '*', or '\'
+*/
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
