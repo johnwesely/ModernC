@@ -3,16 +3,39 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+/* searchs for needle in hay 
+** returns index of needle in hay or 0 if not found */
 size_t wordSearch(char* needle, char* hay);
+
+/* returns true is needle == hay[i] */
 size_t checkMatch(char* needle, char* hay, size_t i);
+
+/* returns memory allocated string 
+** with first incidence of needle in hay replaced with new */
 char* searchReplace(char* needle, char* new, char* hay);
+
+/* searches for regular expression needle in string hay
+** returns index of needle within hay */
 size_t regExSearch(char* needle, char* hay);
+
 /* sets charTable values to neg for a given range */
 void setRange(char start, char end, size_t neg);
+
+/* returns true is hayChar matches regular expression at needIndex */
 size_t checkChar(char* needle, char hayChar, size_t needIndex);
+
+/* returns end of match index for hay is regular expression needle
+** matches hay[i] */
 size_t checkRegExMatch(char* needle, char* hay, size_t i);
+
+/* searches for regular expression needle in hay
+** and returns memory allocated with with needle replaced by new */
 char* regExSearchReplace(char* needle, char* new, char* hay);
+
+/* represents a regular expression pattern in format '[...]' in charTable */
 void readPattern(char* pat); 
+
+/* prints charTable for debug purposes */
 void printCharTable(void);
 
 
@@ -69,6 +92,11 @@ char* searchReplace(char* needle, char* new, char* hay) {
     return hay; 
 }
 
+/* helper function for regExSearch
+** returns a 3 element size_t array
+** ret[0] = starting hay index of match
+** ret[1] = ending hay index of match
+** ret[2] = true if match is found */
 size_t* regExSearchH(char* needle, char* hay) {
     size_t found = 0;
     size_t* ret = malloc(sizeof(size_t) * 3);
@@ -112,7 +140,6 @@ size_t checkChar(char* needle, char hayChar, size_t needIndex) {
 }
 
 size_t checkRegExMatch(char* needle, char* hay, size_t i) {
-    printf("cREM\n");
     size_t j = 0;
     while (needle[j]) {
         // matches pattern
